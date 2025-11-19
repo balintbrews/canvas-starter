@@ -1,6 +1,10 @@
 import FormattedText from "@/lib/FormattedText";
 import { cn } from "@/lib/utils";
 import { cva } from "class-variance-authority";
+import clsx from "clsx"; // eslint-disable-line no-unused-vars
+import { motion } from "motion/react";
+import Confetti from "react-confetti";
+import { useWindowSize } from "react-use";
 
 const Hero = ({
   title,
@@ -28,6 +32,7 @@ const Hero = ({
       backgroundColor: "base",
     },
   });
+  const { width, height } = useWindowSize();
   return (
     <section
       className={heroVariants({
@@ -35,6 +40,7 @@ const Hero = ({
         backgroundColor,
       })}
     >
+      <Confetti width={width} height={height} />
       <div className="mx-auto max-w-screen-xl sm:grid sm:grid-cols-2 sm:items-center">
         <div className="p-8 md:p-12 lg:px-16 lg:py-24">
           <div className="flex max-w-xl flex-col gap-8">
@@ -48,7 +54,9 @@ const Hero = ({
               {description}
             </FormattedText>
             <div>
-              <a
+              <motion.a
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
                 href={buttonLink}
                 className={cn(
                   "inline-block rounded-sm bg-mauve px-12 py-3 text-sm font-medium text-inverted-text transition hover:bg-mauve/75",
@@ -56,7 +64,7 @@ const Hero = ({
                 )}
               >
                 {buttonLabel}
-              </a>
+              </motion.a>
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import * as Switch from "@radix-ui/react-switch";
 
 const PricingTable = ({
   entryTierName,
@@ -68,17 +69,17 @@ const PricingTable = ({
           </span>
         </div>
 
-        <button
-          onClick={() => setIsAnnual(!isAnnual)}
-          className="relative mx-3 h-7 w-14 cursor-pointer rounded-full border-0 bg-surface-1 p-0.5"
+        <Switch.Root
+          checked={isAnnual}
+          onCheckedChange={setIsAnnual}
+          className="relative mx-3 h-7 w-14 cursor-pointer rounded-full border-0 bg-surface-1 p-0.5 data-[state=checked]:bg-surface-1"
         >
-          <div
+          <Switch.Thumb
             className={cn(
-              "absolute top-0.5 h-6 w-6 rounded-full border-2 border-flamingo bg-inverted-text transition-all duration-200",
-              isAnnual ? "left-7" : "left-0.5",
+              "block h-6 w-6 rounded-full border-2 border-flamingo bg-inverted-text transition-transform duration-200 will-change-transform data-[state=checked]:translate-x-6.5",
             )}
           />
-        </button>
+        </Switch.Root>
         <div className="flex w-36 items-center">
           <span
             className={cn(
