@@ -9,9 +9,9 @@ props:
       title: Text
       type: string
       examples:
-        - Believe it or not, this copy was written by a human.
-        - Our team is here to help your AI agents look good.
-        - Our pricing is based on the value you get.
+        - We bring human strengths to AI-first teams.
+        - We make great AI outputs genuinely excellent.
+        - Our pricing is built for measurable outcomes.
 slots: []
 importedJsComponents: []
 dataDependencies: []

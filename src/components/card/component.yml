@@ -9,12 +9,12 @@ props:
       title: "Icon: Name from Lucide"
       type: string
       examples:
-        - layout-panel-top
-        - figma
-        - message-square-more
-        - radio-tower
+        - lightbulb
+        - book-open
+        - pen-tool
+        - megaphone
         - file-chart-column-increasing
-        - mail-question-mark
+        - presentation
     iconColor:
       title: "Icon: Color"
       type: string
@@ -59,27 +59,30 @@ props:
       title: Title
       type: string
       examples:
-        - Website design
-        - Figma to code
-        - Marketing copy-writing
-        - Social media
-        - Analytics and reporting
-        - Summarizing emails
+        - Creative direction
+        - Product storytelling
+        - Brand and voice systems
+        - Campaign concepts
+        - Insight synthesis
+        - Executive communication
     description:
       title: Description
       type: string
       contentMediaType: text/html
       x-formatting-context: block
       examples:
-        - Knowing where to take inspiration from and why can be useful.
-        - Imagine code that people are not terrified to look at, let alone
-          maintain.
-        - Sometimes it's advised not to sound like everyone else on the
-          internet.
-        - We'll give you a discount if we only have to deal with Bluesky.
-        - Our single promise is that we'll never include emojis in our reports.
-        - We don't actually do this, but we needed six things for this grid to
-          look nice.
+        - We shape raw ideas and AI-generated directions into clear creative
+          choices your team can execute confidently.
+        - We turn feature lists and technical outputs into narratives customers
+          understand and care about.
+        - We define reusable messaging rules so AI outputs stay on-brand across
+          channels, markets, and teams.
+        - We develop campaign themes and creative briefs that connect business
+          goals to audience needs.
+        - We combine model output, research, and team context into prioritized
+          insights that drive better decisions.
+        - We craft high-stakes updates, memos, and presentations with the right
+          tone, structure, and strategic focus.
 slots: []
 importedJsComponents: []
 dataDependencies: []

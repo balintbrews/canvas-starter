@@ -33,6 +33,7 @@ const ExampleHomepage = () => {
 
       <Section
         {...exampleSectionArgs[0]}
+        backgroundColor="base"
         content={
           <>
             <Heading {...exampleHeadingArgs[1]} />

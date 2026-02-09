@@ -24,62 +24,62 @@ props:
       title: "Entry tier: Name"
       type: string
       examples:
-        - Basic
+        - Starter
     entryTierDescription:
       title: "Entry tier: Description"
       type: string
       examples:
-        - Perfect for individuals and small projects
+        - For pilots and focused projects
     entryTierPriceMonthly:
       title: "Entry tier: Price, monthly"
       type: number
       examples:
-        - 600
+        - 2500
     entryTierPriceAnnual:
       title: "Entry tier: Price, annual"
       type: number
       examples:
-        - 6000
+        - 25000
     midTierName:
       title: "Mid tier: Name"
       type: string
       examples:
-        - Pro
+        - Growth
     midTierDescription:
       title: "Mid tier: Description"
       type: string
       examples:
-        - Ideal for professionals and growing teams
+        - For teams scaling AI-assisted delivery
     midTierPriceMonthly:
       title: "Mid tier: Price, monthly"
       type: number
       examples:
-        - 2500
+        - 4500
     midTierPriceAnnual:
       title: "Mid tier: Price, annual"
       type: number
       examples:
-        - 25000
+        - 45000
     advancedTierName:
       title: "Advanced tier: Name"
       type: string
       examples:
-        - Business
+        - Enterprise
     advancedTierDescription:
       title: "Advanced tier: Description"
       type: string
       examples:
-        - For organizations with advanced needs
+        - For complex organizations and mission-critical work
     advancedTierPriceMonthly:
       title: "Advanced tier: Price, monthly"
       type: number
       examples:
-        - 7500
+        - 9500
     advancedTierPriceAnnual:
       title: "Advanced tier: Price, annual"
       type: number
       examples:
-        - 75000
+        - 95000
     defaultTier:
       title: Default tier
       type: string
@@ -102,12 +102,12 @@ props:
       title: Annual badge text
       type: string
       examples:
-        - Save 20%
+        - Save 17%
     buttonLabel:
       title: Button label
       type: string
       examples:
-        - Get started today with {tier}
+        - Choose {tier}
     buttonLink:
       title: Button link
       type: string

@@ -12,16 +12,16 @@ props:
       x-formatting-context: block
       examples:
         - >-
-          Something magical happens when humans make things. Depth, nuance,
-          creativity, and original ideas appear in the work.
+          We partner with AI-native teams to add what machines still struggle to
+          replicate: taste, narrative coherence, emotional resonance, and
+          domain-informed judgment.
         - >-
-          We pretend to hallucinate as much as necessary to ease the transition
-          to working with humans again, but we never let that slip into our
-          final deliverables.
+          Your agents generate options fast. Our specialists shape those options
+          into work people trust, remember, and act on.
         - >-
-          If you're confused about what that means, just replace the word
-          <em>value</em> with <em>tokens</em>. It doesn't make it less
-          confusing, but we all came to accept it, didn't we?
+          Choose the model that fits your stage, then scale across strategy,
+          design, and communication with a team that knows how to collaborate
+          with AI systems.
 slots: []
 importedJsComponents: []
 dataDependencies: []

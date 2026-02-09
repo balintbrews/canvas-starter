@@ -13,7 +13,7 @@ props:
       title: Title
       type: string
       examples:
-        - White-label human intelligence for your AI projects
+        - Human expertise that amplifies what your AI agents can do
     description:
       title: Description
       type: string
@@ -21,14 +21,15 @@ props:
       x-formatting-context: block
       examples:
         - >-
-          Leverage a team of smart, creative, and experienced humans, who
-          <em>actually</em> know what they're doing. We deliver the work, and
-          you can tell your customers and investors that it was done with AI.
+          AI agents are extraordinary at speed, scale, and automation. We add
+          the human layer they need: creative direction, editorial judgment, and
+          strategic thinking that turns capable output into <em>standout
+          work</em>.
     buttonLabel:
       title: Button label
       type: string
       examples:
-        - Get started today
+        - Build your hybrid team
     buttonLink:
       title: Button link
       type: string
@@ -41,7 +42,7 @@ props:
       $ref: json-schema-definitions://canvas.module/image
       examples:
         - src: >-
-            https://images.unsplash.com/photo-1484959014842-cd1d967a39cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80
+            https://images.unsplash.com/photo-1752650736024-d6aac18abc2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80
           alt: Woman playing the violin
           width: 1770
           height: 1180

@@ -66,7 +66,7 @@ const Hero = ({
             src={image.src}
             width={image.width}
             height={image.height}
-            className="h-full w-full object-cover object-right shadow-lg sm:rounded-l-4xl xl:rounded-r-xl dark:border dark:border-surface-0 dark:shadow-none"
+            className="h-full w-full object-cover object-center shadow-lg sm:rounded-l-4xl xl:rounded-r-xl dark:border dark:border-surface-0 dark:shadow-none"
           />
         </div>
       </div>
