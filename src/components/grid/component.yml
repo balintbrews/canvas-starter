@@ -7,5 +7,3 @@ props:
 slots:
   content:
     title: Content
-importedJsComponents: []
-dataDependencies: []

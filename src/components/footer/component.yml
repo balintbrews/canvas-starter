@@ -34,5 +34,3 @@ props:
 slots:
   branding:
     title: Branding
-importedJsComponents: []
-dataDependencies: []
