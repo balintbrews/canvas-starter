@@ -1,6 +1,6 @@
 // SVG source: https://www.svgrepo.com/svg/200008/human-resources-search.
 
-import { cn } from "@/lib/utils";
+import { cn } from "drupal-canvas";
 
 const Logo = ({ linkToFrontPage = true, className }) => {
   const Element = linkToFrontPage ? "a" : "div";

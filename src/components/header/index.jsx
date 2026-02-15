@@ -1,5 +1,5 @@
-import { cn } from "@/lib/utils";
 import { cva } from "class-variance-authority";
+import { cn } from "drupal-canvas";
 
 const Header = ({ branding, navigation, darkVariant, backgroundColor }) => {
   const headerVariants = cva("", {

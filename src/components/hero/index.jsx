@@ -1,6 +1,5 @@
-import FormattedText from "@/lib/FormattedText";
-import { cn } from "@/lib/utils";
 import { cva } from "class-variance-authority";
+import { cn, FormattedText } from "drupal-canvas";
 
 const Hero = ({
   title,

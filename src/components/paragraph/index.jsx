@@ -1,4 +1,4 @@
-import FormattedText from "@/lib/FormattedText";
+import { FormattedText } from "drupal-canvas";
 
 const Paragraph = ({ text }) => {
   return (

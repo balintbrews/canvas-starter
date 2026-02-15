@@ -1,5 +1,5 @@
-import FormattedText from "@/lib/FormattedText";
 import { cva } from "class-variance-authority";
+import { FormattedText } from "drupal-canvas";
 
 const Card = ({ title, description, iconNameFromLucide, iconColor }) => {
   const cardVariants = cva("size-8", {
