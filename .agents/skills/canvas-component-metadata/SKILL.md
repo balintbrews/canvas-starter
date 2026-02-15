@@ -266,8 +266,19 @@ const variants = cva("base-classes", {
 
 ## Slots
 
-Slots allow other components to be embedded within a component. In React, slots
-are received as props containing the rendered children.
+Slots allow other components to be embedded within a component. In React, each
+slot is received as a named prop that matches the slot key.
+
+Before creating slots, confirm with the user unless the use case is clearly
+compositional (for example, rich nested content, or repeatable embedded
+components). For simple text-like values, prefer a prop.
+
+**Important:** Do not map Canvas slots to the `children` prop by default. If the
+slot key is `content`, consume it as `content` in JSX.
+
+Using a slot key named `children` is technically possible, but it is not
+recommended because slot naming often flows into user-facing Canvas labels.
+Prefer explicit slot keys such as `content`, `media`, or `actions`.
 
 `slots` must be either:
 
@@ -282,11 +293,19 @@ slots:
     title: Buttons
 ```
 
-In the JSX component, slots are destructured as props and rendered directly:
+In the JSX component, slots are destructured as named props and rendered
+directly:
 
 ```jsx
 const Section = ({ width, content }) => {
   return <div className={sectionVariants({ width })}>{content}</div>;
+};
+```
+
+```jsx
+// Wrong when the slot key is `content`: this does not consume the named slot.
+const Section = ({ children }) => {
+  return <div>{children}</div>;
 };
 ```
 
