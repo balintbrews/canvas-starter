@@ -1,6 +1,12 @@
 # Agent guidance
 
-This repository contains Drupal Canvas Code Components. See the
+This repository contains Drupal Canvas Code Components. All current and future
+React components in this repository are considered Canvas components, and they
+need to adhere to the Canvas component contract defined in the
+`canvas-component-definition` skill.
+
+For all operations involving React components, the `component.yml` files, and
+`src/components/global.css` in this repository, load the
 `canvas-component-definition` skill.
 
 ## Validation and upload
