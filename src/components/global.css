@@ -16,6 +16,12 @@
  */
 @import "tailwindcss";
 
+/**
+ * Uncomment if you would like to use the Tailwind CSS Typography plugin.
+ * @see https://github.com/tailwindlabs/tailwindcss-typography
+ */
+/* @plugin "@tailwindcss/typography"; */
+
 /*
  * Colors are based on the Catpuccin color palette.
  * @see https://catppuccin.com
