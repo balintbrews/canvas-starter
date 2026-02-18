@@ -60,6 +60,7 @@ const ExampleHomepage = () => {
         }
       />
       <Section
+        {...exampleSectionArgs[0]}
         darkVariant={true}
         content={
           <>
