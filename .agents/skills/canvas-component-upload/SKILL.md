@@ -11,20 +11,23 @@ description:
 Before uploading, confirm the user has Drupal Canvas CLI installed and
 configured for their target site.
 
-### Setup gate (ask first)
+### Setup gate
 
-Ask the user whether `@drupal-canvas/cli` is already installed and authenticated
-for the project/site they want to upload to.
+Before running any upload command:
 
-- If **yes**, proceed with upload commands below.
-- If **no** (or they are unsure), **do not guess setup steps**. Point them to
-  the official docs and ask them to complete setup first:
-  - Drupal Canvas OAuth module setup:
-    <https://git.drupalcode.org/project/canvas/-/tree/1.x/modules/canvas_oauth#2-setup>
-  - Drupal Canvas CLI package/docs:
-    <https://www.npmjs.com/package/@drupal-canvas/cli>
-
-After they confirm setup is complete, continue with upload.
+1. Check that a `.env` file exists in the project root.
+2. If `.env` exists, verify these values are set:
+   - `CANVAS_SITE_URL`
+   - `CANVAS_CLIENT_ID`
+   - `CANVAS_CLIENT_SECRET`
+3. If `.env` is missing, or any required value is missing, **stop** and ask the
+   user to complete setup first.
+4. **Do not guess setup steps**. Point the user to the official docs:
+   - Drupal Canvas OAuth module setup:
+     <https://git.drupalcode.org/project/canvas/-/tree/1.x/modules/canvas_oauth#2-setup>
+   - Drupal Canvas CLI package/docs:
+     <https://www.npmjs.com/package/@drupal-canvas/cli>
+5. Continue only after the user confirms setup is complete.
 
 ## Run upload
 
@@ -41,9 +44,31 @@ were created or modified (e.g., `canvas upload -c button,card,hero`).
 
 ## Handling upload failures
 
-**Always retry failed uploads.** Uploads can fail for various transient reasons
-(network issues, timeouts, server load). When an upload fails, retry the same
-command—it will often succeed on a subsequent attempt.
+Default behavior: **always retry failed uploads** unless the error is clearly a
+connection/setup failure.
+
+Retry uploads when the failure indicates the Canvas app connection is already
+working (for example, dependency/order-related component errors). Do **not**
+retry connection/setup failures.
+
+### Connection/setup failures: Stop, do not retry
+
+If upload fails with authentication, authorization, or network/connection
+errors, stop and ask the user to complete or verify setup first. This includes
+errors like invalid credentials, unauthorized/forbidden responses, DNS issues,
+connection refused, host unreachable, request timeout before reaching Canvas, or
+TLS/SSL handshake/certificate failures.
+
+Point the user to the official setup docs:
+
+- Drupal Canvas OAuth module setup:
+  <https://git.drupalcode.org/project/canvas/-/tree/1.x/modules/canvas_oauth#2-setup>
+- Drupal Canvas CLI package/docs:
+  <https://www.npmjs.com/package/@drupal-canvas/cli>
+
+Ask them to verify and update `.env` values (`CANVAS_SITE_URL`,
+`CANVAS_CLIENT_ID`, `CANVAS_CLIENT_SECRET`) and OAuth/CLI setup, then retry the
+upload only after they confirm setup updates are complete.
 
 ### Dependency-related failures
 

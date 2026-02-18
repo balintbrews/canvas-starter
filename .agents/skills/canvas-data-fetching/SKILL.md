@@ -114,6 +114,30 @@ params.addFields("file--file", ["uri", "url"]);
 When building a component that displays a list of content items (e.g., a news
 listing, event calendar, or resource library), follow this workflow:
 
+### Setup gate
+
+Before any JSON:API discovery or content-type checks, verify local setup:
+
+1. Check that a `.env` file exists in the project root.
+2. If `.env` exists, verify `CANVAS_SITE_URL` is set. Read
+   `CANVAS_JSONAPI_PREFIX` if present; otherwise, use `jsonapi`.
+3. Send an HTTP request to `{CANVAS_SITE_URL}/{CANVAS_JSONAPI_PREFIX}`. Success
+   means HTTP `200`.
+4. If the request is successful, continue with Drupal data fetching.
+5. If the request is unsuccessful (or required `.env` values are missing), ask
+   the user whether they want to:
+   - Configure Drupal connectivity now, or
+   - Continue with static content instead of Drupal fetching.
+6. If the user chooses to configure connectivity, provide `.env` instructions:
+   - `CANVAS_SITE_URL=<their Drupal site URL>`
+   - `CANVAS_JSONAPI_PREFIX=jsonapi` (optional; defaults to `jsonapi`) Then wait
+     for the user to confirm they updated `.env`, and test the request again.
+7. If the user chooses not to configure connectivity, proceed with static
+   content.
+8. Do not update Vite config (`vite.config.*`) to troubleshoot connectivity.
+   Connectivity issues must be resolved via correct `.env` values and Drupal
+   site availability, not build tooling changes.
+
 ### Step 1: Analyze the list structure
 
 Examine the design to understand what data each list item needs:
@@ -129,7 +153,7 @@ Before writing code, verify that an appropriate content type exists in Drupal:
 1. Check the JSON:API endpoint of your local Drupal site (configured via
    `CANVAS_SITE_URL` and `CANVAS_JSONAPI_PREFIX` environment variables) to find
    a content type that matches the required structure. Use a plain `fetch`
-   request for this check.
+   request for this check, after passing the Setup gate.
 
 2. If a matching content type exists, use it and note which fields are
    available.
