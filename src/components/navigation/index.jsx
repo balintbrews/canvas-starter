@@ -1,21 +1,21 @@
 const Navigation = () => {
   // Data fetching is supported using SWR and @drupal-api-client/json-api-client.
   // @see https://project.pages.drupalcode.org/canvas/code-components/data-fetching
-  // @todo Figure out how this fits in the development workflow of this repo.
-  const data = [
-    { href: "#", title: "Services" },
-    { href: "#", title: "Blog" },
-    { href: "#", title: "About" },
-    { href: "#", title: "Careers" },
+  const menu = [
+    { title: "Home", url: "#" },
+    { title: "Services", url: "#" },
+    { title: "Blog", url: "#" },
+    { title: "About", url: "#" },
+    { title: "Careers", url: "#" },
   ];
   return (
     <div className="md:flex md:items-center md:gap-12">
       <nav aria-label="Global" className="hidden md:!block">
         <ul className="flex items-center gap-6 text-sm">
-          {data.map((item) => (
+          {menu.map((item) => (
             <li key={item.title}>
               <a
-                href={item.href}
+                href={item.url}
                 className="text-text transition-colors hover:text-text/75"
               >
                 {item.title}
