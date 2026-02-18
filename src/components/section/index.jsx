@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 import { cn } from "drupal-canvas";
 
-const Section = ({ content, darkVariant, backgroundColor = "base" }) => {
+const Section = ({ content, darkVariant, backgroundColor }) => {
   const sectionVariants = cva("", {
     variants: {
       colorScheme: {
@@ -16,7 +16,6 @@ const Section = ({ content, darkVariant, backgroundColor = "base" }) => {
     },
     defaultVariants: {
       colorScheme: "light",
-      backgroundColor: "base",
     },
   });
 
