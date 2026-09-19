@@ -9,4 +9,4 @@ props:
       title: Link to front page
       examples:
         - true
-slots: []
+slots: {}

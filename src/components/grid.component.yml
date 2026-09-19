@@ -3,7 +3,7 @@ machineName: grid
 status: true
 required: []
 props:
-  properties: []
+  properties: {}
 slots:
   content:
     title: Content

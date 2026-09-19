@@ -36,4 +36,4 @@ props:
           <p>We partner with AI-native teams to add what machines still struggle
           to replicate: taste, narrative coherence, emotional resonance, and
           domain-informed judgment.</p>
-slots: []
+slots: {}

@@ -33,4 +33,4 @@ props:
       title: Variant
       examples:
         - body
-slots: []
+slots: {}

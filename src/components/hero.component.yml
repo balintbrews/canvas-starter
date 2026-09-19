@@ -51,4 +51,4 @@ props:
       title: Background color
       examples:
         - cream
-slots: []
+slots: {}
