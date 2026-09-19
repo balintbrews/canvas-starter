@@ -22,43 +22,43 @@
       }
     },
     {
-      "name": "Mist background",
+      "name": "Acid background",
       "props": {
-        "backgroundColor": "mist"
+        "backgroundColor": "acid"
       },
       "slots": {
-        "branding": ["header-logo-mist"],
-        "navigation": ["header-navigation-mist"]
+        "branding": ["header-logo-acid"],
+        "navigation": ["header-navigation-acid"]
       },
       "elements": {
-        "header-logo-mist": {
+        "header-logo-acid": {
           "type": "logo",
           "props": {
             "linkToFrontPage": true
           }
         },
-        "header-navigation-mist": {
+        "header-navigation-acid": {
           "type": "navigation"
         }
       }
     },
     {
-      "name": "Navy background",
+      "name": "Ink background",
       "props": {
-        "backgroundColor": "navy"
+        "backgroundColor": "ink"
       },
       "slots": {
-        "branding": ["header-logo-navy"],
-        "navigation": ["header-navigation-navy"]
+        "branding": ["header-logo-ink"],
+        "navigation": ["header-navigation-ink"]
       },
       "elements": {
-        "header-logo-navy": {
+        "header-logo-ink": {
           "type": "logo",
           "props": {
             "linkToFrontPage": true
           }
         },
-        "header-navigation-navy": {
+        "header-navigation-ink": {
           "type": "navigation"
         }
       }

@@ -31,15 +31,16 @@ function Navigation({
       {...props}
     >
       <nav aria-label="Global" className="hidden lg:block!">
-        <ul className="flex items-center gap-5 text-sm font-medium xl:gap-8">
+        <ul className="flex items-center gap-5 font-mono text-xs font-bold tracking-[0.12em] uppercase xl:gap-8">
           {menu.map((item) => (
             <li key={item.title}>
               <a
                 href={item.url}
                 className={cn(
-                  'inline-flex min-h-10 items-center border-b border-transparent text-text transition-colors hover:text-green dark:hover:text-green',
+                  'inline-flex min-h-10 items-center border-b-[3px] border-transparent text-text hover:border-blue hover:text-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue dark:hover:border-acid dark:hover:text-acid',
+                  'motion-safe:transition-colors',
                   item.url === activeUrl &&
-                    'border-green dark:border-green dark:text-cream',
+                    'border-blue dark:border-acid dark:text-chalk',
                 )}
               >
                 {item.title}
@@ -52,7 +53,7 @@ function Navigation({
         <div className="hidden lg:flex lg:items-center lg:gap-4 xl:gap-5">
           <a
             href="/login"
-            className="inline-flex text-sm font-medium text-text transition-colors hover:text-green focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green dark:hover:text-green"
+            className="inline-flex font-mono text-xs font-bold tracking-[0.12em] text-text uppercase hover:text-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue motion-safe:transition-colors dark:hover:text-acid"
           >
             Login
           </a>
@@ -60,7 +61,11 @@ function Navigation({
           <div className="flex">
             <a
               href="/register"
-              className="inline-flex min-h-12 items-center rounded-md bg-surface-1 px-5 text-sm font-bold text-text shadow-sm transition hover:bg-surface-1/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green xl:px-6"
+              className={cn(
+                'inline-flex min-h-12 items-center border-2 border-ink bg-ink px-5 font-mono text-xs font-bold tracking-[0.12em] text-chalk uppercase shadow-hard-blue-sm xl:px-6',
+                'hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0_0_var(--color-blue)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue motion-safe:transition-[transform,box-shadow]',
+                'dark:border-acid dark:bg-acid dark:text-ink',
+              )}
             >
               Register
             </a>
@@ -70,7 +75,7 @@ function Navigation({
         <div className="block lg:hidden">
           <button
             type="button"
-            className="rounded-sm bg-surface-0 p-2 text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green"
+            className="flex size-11 items-center justify-center border-2 border-line bg-transparent text-text hover:bg-acid hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue motion-safe:transition-colors dark:hover:border-acid"
             aria-label="Open menu"
           >
             <svg
@@ -79,11 +84,11 @@ function Navigation({
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              strokeWidth="2"
+              strokeWidth="2.5"
             >
               <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
+                strokeLinecap="square"
+                strokeLinejoin="miter"
                 d="M4 6h16M4 12h16M4 18h16"
               />
             </svg>

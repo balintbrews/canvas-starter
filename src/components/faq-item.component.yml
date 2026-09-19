@@ -1,0 +1,49 @@
+name: FAQ item
+machineName: faq-item
+status: true
+required:
+  - question
+  - answer
+props:
+  properties:
+    question:
+      type: string
+      title: Question
+      examples:
+        - How does Humanify work with the AI agents we already run?
+        - Which kinds of work do you take on?
+        - How do we choose between Starter, Growth, and Enterprise?
+        - What does a typical engagement look like?
+        - Do you replace our team or our agents?
+    answer:
+      type: string
+      contentMediaType: text/html
+      x-formatting-context: block
+      title: Answer
+      examples:
+        - >-
+          <p>Your agents keep generating. Our specialists step in where judgment
+          matters: setting the brief, choosing between options, editing for tone
+          and accuracy, and shaping the result into something your audience
+          trusts. You keep your tools, your pipelines, and your pace.</p>
+        - >-
+          <p>Creative direction, product storytelling, brand and voice systems,
+          campaign concepts, insight synthesis, and executive communication. If
+          your agents can draft it, we can make it genuinely excellent.</p>
+        - >-
+          <p>Starter suits pilots and focused projects with a single team.
+          Growth fits teams scaling AI-assisted delivery across several
+          workstreams. Enterprise is for complex organizations and
+          mission-critical work that needs more of us involved. Start where you
+          are, and move up when the volume calls for it.</p>
+        - >-
+          <p>We start with the work in front of you: one workflow, one team, and
+          a clear definition of done. Our editors and strategists review drafts
+          as they land, return decisions your agents can act on, and keep a
+          running record of what changed and why. From there, scope grows with
+          results.</p>
+        - >-
+          <p>Neither. We add the human layer: the taste, context, and
+          accountability that turn capable output into standout work. Your
+          people stay in charge, and your agents stay busy.</p>
+slots: {}

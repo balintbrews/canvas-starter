@@ -1,0 +1,11 @@
+{
+  "mocks": [
+    {
+      "name": "Long answer",
+      "props": {
+        "question": "What happens when an AI draft is close but not quite right, and who decides what changes before it reaches customers?",
+        "answer": "<p>An editor reads the draft against the brief and marks what is missing, off-tone, or unsupported. Small fixes happen on the spot. Larger ones go back to your agents as structured notes, so the next pass starts from a decision rather than a guess.</p><p>What we look for on every draft:</p><ul><li>Does it say one thing a reader can repeat?</li><li>Is every claim something your team can stand behind?</li><li>Does it sound like you, not like a model?</li></ul><p>Your team keeps the final call on what ships.</p>"
+      }
+    }
+  ]
+}

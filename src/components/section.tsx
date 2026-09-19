@@ -3,16 +3,19 @@ import { cn } from 'drupal-canvas';
 import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 import type { VariantProps } from 'class-variance-authority';
 
-const sectionVariants = cva('', {
+const sectionVariants = cva('border-b-2 border-line', {
   variants: {
     backgroundColor: {
-      cream: 'bg-cream',
+      chalk: 'bg-chalk',
       paper: 'bg-paper',
-      mist: 'bg-mist',
+      acid: 'bg-acid',
+      // Blue is an inverted surface: chalk type, periwinkle muted text, and a
+      // deeper blue for surface fills.
+      blue: 'dark blue bg-blue',
     },
   },
   defaultVariants: {
-    backgroundColor: 'cream',
+    backgroundColor: 'chalk',
   },
 });
 
@@ -44,7 +47,7 @@ function Section({
       )}
       {...props}
     >
-      <div className="mx-auto flex max-w-7xl flex-col items-stretch gap-8 px-5 py-10 sm:px-8 md:py-12 lg:px-16">
+      <div className="mx-auto flex max-w-7xl flex-col items-stretch gap-8 px-5 py-12 sm:px-8 md:gap-10 md:py-16 lg:px-16 lg:py-20">
         {content}
       </div>
     </section>

@@ -1,9 +1,9 @@
 {
   "mocks": [
     {
-      "name": "Cream background",
+      "name": "Chalk background",
       "props": {
-        "backgroundColor": "cream"
+        "backgroundColor": "chalk"
       },
       "slots": {
         "content": ["section-default-heading", "section-default-paragraph"]
@@ -47,24 +47,76 @@
       }
     },
     {
-      "name": "Mist background",
+      "name": "Acid background",
       "props": {
-        "backgroundColor": "mist"
+        "backgroundColor": "acid"
       },
       "slots": {
-        "content": ["section-mist-heading", "section-mist-paragraph"]
+        "content": ["section-acid-heading", "section-acid-paragraph"]
       },
       "elements": {
-        "section-mist-heading": {
+        "section-acid-heading": {
           "type": "heading",
           "props": {
             "text": "We bring human strengths to AI-first teams."
           }
         },
-        "section-mist-paragraph": {
+        "section-acid-paragraph": {
           "type": "paragraph",
           "props": {
             "text": "We partner with AI-native teams to add what machines still struggle to replicate: taste, narrative coherence, emotional resonance, and domain-informed judgment."
+          }
+        }
+      }
+    },
+    {
+      "name": "Blue background",
+      "props": {
+        "backgroundColor": "blue"
+      },
+      "slots": {
+        "content": [
+          "section-blue-heading",
+          "section-blue-paragraph",
+          "section-blue-pricing-table"
+        ]
+      },
+      "elements": {
+        "section-blue-heading": {
+          "type": "heading",
+          "props": {
+            "text": "We bring human strengths to AI-first teams."
+          }
+        },
+        "section-blue-paragraph": {
+          "type": "paragraph",
+          "props": {
+            "text": "We partner with AI-native teams to add what machines still struggle to replicate: taste, narrative coherence, emotional resonance, and domain-informed judgment."
+          }
+        },
+        "section-blue-pricing-table": {
+          "type": "pricing-table",
+          "props": {
+            "entryTierName": "Starter",
+            "entryTierDescription": "For pilots and focused projects",
+            "entryTierIconNameFromLucide": "send",
+            "entryTierPriceMonthly": 2500,
+            "entryTierPriceAnnual": 25000,
+            "midTierName": "Growth",
+            "midTierDescription": "For teams scaling AI-assisted delivery",
+            "midTierIconNameFromLucide": "chart-no-axes-column-increasing",
+            "midTierPriceMonthly": 4500,
+            "midTierPriceAnnual": 45000,
+            "advancedTierName": "Enterprise",
+            "advancedTierDescription": "For complex organizations and mission-critical work",
+            "advancedTierIconNameFromLucide": "building-2",
+            "advancedTierPriceMonthly": 9500,
+            "advancedTierPriceAnnual": 95000,
+            "defaultTier": "mid",
+            "annualSelectedByDefault": false,
+            "annualBadgeText": "Save 17%",
+            "buttonLabel": "Choose {tier}",
+            "buttonLink": "/page/1"
           }
         }
       }

@@ -1,0 +1,74 @@
+{
+  "mocks": [
+    {
+      "name": "With intro and items in a section",
+      "root": "faq-in-section",
+      "elements": {
+        "faq-in-section": {
+          "type": "section",
+          "props": {
+            "backgroundColor": "paper"
+          },
+          "slots": {
+            "content": ["faq-in-section-faq"]
+          }
+        },
+        "faq-in-section-faq": {
+          "type": "faq",
+          "slots": {
+            "intro": [
+              "faq-in-section-eyebrow",
+              "faq-in-section-heading",
+              "faq-in-section-paragraph"
+            ],
+            "items": [
+              "faq-in-section-item-1",
+              "faq-in-section-item-2",
+              "faq-in-section-item-3"
+            ]
+          }
+        },
+        "faq-in-section-eyebrow": {
+          "type": "paragraph",
+          "props": {
+            "text": "Questions, answered",
+            "variant": "eyebrow"
+          }
+        },
+        "faq-in-section-heading": {
+          "type": "heading",
+          "props": {
+            "text": "What teams ask before they bring us in."
+          }
+        },
+        "faq-in-section-paragraph": {
+          "type": "paragraph",
+          "props": {
+            "text": "<p>Straight answers about how our specialists work alongside your AI agents, from the first brief to the work you ship.</p>"
+          }
+        },
+        "faq-in-section-item-1": {
+          "type": "faq-item",
+          "props": {
+            "question": "How does Humanify work with the AI agents we already run?",
+            "answer": "<p>Your agents keep generating. Our specialists step in where judgment matters: setting the brief, choosing between options, editing for tone and accuracy, and shaping the result into something your audience trusts. You keep your tools, your pipelines, and your pace.</p>"
+          }
+        },
+        "faq-in-section-item-2": {
+          "type": "faq-item",
+          "props": {
+            "question": "Which kinds of work do you take on?",
+            "answer": "<p>Creative direction, product storytelling, brand and voice systems, campaign concepts, insight synthesis, and executive communication. If your agents can draft it, we can make it genuinely excellent.</p>"
+          }
+        },
+        "faq-in-section-item-3": {
+          "type": "faq-item",
+          "props": {
+            "question": "Do you replace our team or our agents?",
+            "answer": "<p>Neither. We add the human layer: the taste, context, and accountability that turn capable output into standout work. Your people stay in charge, and your agents stay busy.</p>"
+          }
+        }
+      }
+    }
+  ]
+}

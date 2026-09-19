@@ -1,0 +1,58 @@
+name: Testimonial item
+machineName: testimonial-item
+status: true
+required:
+  - quote
+  - name
+props:
+  properties:
+    quote:
+      type: string
+      contentMediaType: text/html
+      x-formatting-context: block
+      title: Quote
+      examples:
+        - >-
+          <p>Our agents wrote ten launch narratives before lunch. Humanify's
+          editors picked the one worth telling and made it the story our sales
+          team still uses. That call we could not automate.</p>
+        - >-
+          <p>We kept our tools, our people, and our pace. What changed was
+          confidence: every brief now comes back with a clear point of view, and
+          every draft leaves with a reason it works.</p>
+        - >-
+          <p>The insight synthesis alone paid for the Growth plan. Model output,
+          research, and our notes came back as three decisions, not thirty
+          pages. Leadership meetings got shorter and better.</p>
+    name:
+      type: string
+      title: Name
+      examples:
+        - Maren Holt
+        - Tobias Ekwueme
+        - Priya Raghunathan
+    role:
+      type: string
+      title: Role
+      examples:
+        - Head of Product Marketing, Lumenpath Analytics
+        - VP Brand, Halvard Robotics
+        - Chief of Staff, Corvane Health
+    image:
+      type: object
+      $ref: json-schema-definitions://canvas.module/image
+      title: Image
+      examples:
+        - src: https://mockmind-api.uifaces.co/content/human/221.jpg
+          alt: Portrait of Maren Holt
+          width: 1024
+          height: 1024
+        - src: https://mockmind-api.uifaces.co/content/human/222.jpg
+          alt: Portrait of Tobias Ekwueme
+          width: 1024
+          height: 1024
+        - src: https://mockmind-api.uifaces.co/content/human/220.jpg
+          alt: Portrait of Priya Raghunathan
+          width: 1024
+          height: 1024
+slots: {}

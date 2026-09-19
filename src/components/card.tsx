@@ -30,19 +30,30 @@ function Card({
   return (
     <div
       className={cn(
-        'flex gap-6 bg-transparent px-0 py-6 md:px-8 md:py-7',
+        'group flex flex-col gap-6 bg-transparent p-6 hover:bg-paper md:p-8 dark:hover:bg-surface-0',
+        'motion-safe:transition-colors motion-safe:duration-150',
         className,
       )}
       {...props}
     >
       {iconNameFromLucide && (
-        <div className="flex size-16 shrink-0 items-center justify-center rounded-full bg-surface-0">
-          <div className="size-8 bg-green" style={iconMaskStyle} />
+        <div className="relative mr-1.5 mb-1.5 size-14 shrink-0">
+          {/* Misregistered ink layer beneath the acid tile. */}
+          <div
+            className="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-ink dark:bg-blue"
+            aria-hidden="true"
+          />
+          <div className="grain-multiply relative flex size-14 items-center justify-center bg-acid">
+            <div
+              className="relative z-10 size-7 bg-ink"
+              style={iconMaskStyle}
+            />
+          </div>
         </div>
       )}
       <div className="min-w-0">
         {title && (
-          <h3 className="mb-2 text-base leading-5 font-bold text-text">
+          <h3 className="mb-3 text-lg leading-6 font-black tracking-[-0.02em] text-text uppercase">
             {title}
           </h3>
         )}

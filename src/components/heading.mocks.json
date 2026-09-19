@@ -7,7 +7,7 @@
         "heading-in-a-section": {
           "type": "section",
           "props": {
-            "backgroundColor": "cream"
+            "backgroundColor": "chalk"
           },
           "slots": {
             "content": ["heading-default"]

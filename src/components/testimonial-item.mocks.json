@@ -1,0 +1,39 @@
+{
+  "mocks": [
+    {
+      "name": "Without image",
+      "props": {
+        "quote": "<p>We kept our tools, our people, and our pace. What changed was confidence: every brief now comes back with a clear point of view, and every draft leaves with a reason it works.</p>",
+        "name": "Tobias Ekwueme",
+        "role": "VP Brand, Halvard Robotics"
+      }
+    },
+    {
+      "name": "Without role",
+      "props": {
+        "quote": "<p>The insight synthesis alone paid for the Growth plan. Model output, research, and our own notes came back as three decisions, not thirty pages.</p>",
+        "name": "Priya Raghunathan",
+        "image": {
+          "src": "https://mockmind-api.uifaces.co/content/human/220.jpg",
+          "alt": "Portrait of Priya Raghunathan",
+          "width": 1024,
+          "height": 1024
+        }
+      }
+    },
+    {
+      "name": "Long quote",
+      "props": {
+        "quote": "<p>Our agents can draft a launch narrative in seconds, and for a while that felt like the finish line. Working with Humanify's editors turned those drafts into a story people inside and outside the company could actually repeat. Our sales team uses it, our recruiters use it, and our board asked who wrote it. That is the part that moved the numbers.</p>",
+        "name": "Maren Holt",
+        "role": "Head of Product Marketing, Lumenpath Analytics",
+        "image": {
+          "src": "https://mockmind-api.uifaces.co/content/human/221.jpg",
+          "alt": "Portrait of Maren Holt",
+          "width": 1024,
+          "height": 1024
+        }
+      }
+    }
+  ]
+}

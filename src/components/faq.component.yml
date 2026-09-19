@@ -1,0 +1,11 @@
+name: FAQ
+machineName: faq
+status: true
+required: []
+props:
+  properties: {}
+slots:
+  intro:
+    title: Intro
+  items:
+    title: Items

@@ -5,7 +5,7 @@
     "12db327c-9a19-4952-9389-80ba8354a5b0": {
       "type": "js.header",
       "props": {
-        "backgroundColor": "cream"
+        "backgroundColor": "chalk"
       },
       "slots": {
         "branding": ["aaef79ba-f04f-42bc-b888-e0229d46c9b5"],
@@ -31,7 +31,7 @@
         "description": "AI agents are extraordinary at speed, scale, and automation. We add the human layer they need: creative direction, editorial judgment, and strategic thinking that turns capable output into <em>standout work</em>.",
         "buttonLabel": "Build your hybrid team",
         "buttonLink": "/register",
-        "backgroundColor": "cream"
+        "backgroundColor": "chalk"
       }
     },
     "ecaa0198-64b4-49d8-8ca9-c7cd600a955a": {
@@ -124,7 +124,7 @@
     "496c3054-2795-46ed-9c96-2a2b8f9ffcbd": {
       "type": "js.section",
       "props": {
-        "backgroundColor": "mist"
+        "backgroundColor": "acid"
       },
       "slots": {
         "content": ["9f03d491-1c75-45b6-8e4c-75c837a3b964"]
@@ -144,10 +144,85 @@
         "description": "<p>We partner with AI-native teams to add what machines still struggle to replicate: taste, narrative coherence, emotional resonance, and domain-informed judgment.</p>"
       }
     },
+    "home-testimonials-section": {
+      "type": "js.section",
+      "props": {
+        "backgroundColor": "paper"
+      },
+      "slots": {
+        "content": ["home-testimonials"]
+      }
+    },
+    "home-testimonials": {
+      "type": "js.testimonial",
+      "slots": {
+        "intro": ["home-testimonials-eyebrow", "home-testimonials-heading"],
+        "items": [
+          "home-testimonial-1",
+          "home-testimonial-2",
+          "home-testimonial-3"
+        ]
+      }
+    },
+    "home-testimonials-eyebrow": {
+      "type": "js.paragraph",
+      "props": {
+        "text": "In their words",
+        "variant": "eyebrow"
+      }
+    },
+    "home-testimonials-heading": {
+      "type": "js.heading",
+      "props": {
+        "text": "Standout work, according to the teams who ship it."
+      }
+    },
+    "home-testimonial-1": {
+      "type": "js.testimonial-item",
+      "props": {
+        "quote": "<p>Our agents wrote ten launch narratives before lunch. Humanify's editors picked the one worth telling and made it the story our sales team still uses. That call we could not automate.</p>",
+        "name": "Maren Holt",
+        "role": "Head of Product Marketing, Lumenpath Analytics",
+        "image": {
+          "src": "https://mockmind-api.uifaces.co/content/human/221.jpg",
+          "alt": "Portrait of Maren Holt",
+          "width": 1024,
+          "height": 1024
+        }
+      }
+    },
+    "home-testimonial-2": {
+      "type": "js.testimonial-item",
+      "props": {
+        "quote": "<p>We kept our tools, our people, and our pace. What changed was confidence: every brief now comes back with a clear point of view, and every draft leaves with a reason it works.</p>",
+        "name": "Tobias Ekwueme",
+        "role": "VP Brand, Halvard Robotics",
+        "image": {
+          "src": "https://mockmind-api.uifaces.co/content/human/222.jpg",
+          "alt": "Portrait of Tobias Ekwueme",
+          "width": 1024,
+          "height": 1024
+        }
+      }
+    },
+    "home-testimonial-3": {
+      "type": "js.testimonial-item",
+      "props": {
+        "quote": "<p>The insight synthesis alone paid for the Growth plan. Model output, research, and our notes came back as three decisions, not thirty pages. Leadership meetings got shorter and better.</p>",
+        "name": "Priya Raghunathan",
+        "role": "Chief of Staff, Corvane Health",
+        "image": {
+          "src": "https://mockmind-api.uifaces.co/content/human/220.jpg",
+          "alt": "Portrait of Priya Raghunathan",
+          "width": 1024,
+          "height": 1024
+        }
+      }
+    },
     "1d3ff9bf-917b-4658-9946-ed65622cf0c3": {
       "type": "js.section",
       "props": {
-        "backgroundColor": "cream"
+        "backgroundColor": "blue"
       },
       "slots": {
         "content": ["0ef21892-c9a4-4f4f-b5de-ea0c1579c4c3"]
@@ -196,10 +271,86 @@
         "text": "<p>Choose the model that fits your stage, then scale across strategy, design, and communication with a team that knows how to collaborate with AI systems.</p>"
       }
     },
+    "home-faq-section": {
+      "type": "js.section",
+      "props": {
+        "backgroundColor": "paper"
+      },
+      "slots": {
+        "content": ["home-faq"]
+      }
+    },
+    "home-faq": {
+      "type": "js.faq",
+      "slots": {
+        "intro": ["home-faq-eyebrow", "home-faq-heading", "home-faq-paragraph"],
+        "items": [
+          "home-faq-1",
+          "home-faq-2",
+          "home-faq-3",
+          "home-faq-4",
+          "home-faq-5"
+        ]
+      }
+    },
+    "home-faq-eyebrow": {
+      "type": "js.paragraph",
+      "props": {
+        "text": "Questions, answered",
+        "variant": "eyebrow"
+      }
+    },
+    "home-faq-heading": {
+      "type": "js.heading",
+      "props": {
+        "text": "What teams ask before they bring us in."
+      }
+    },
+    "home-faq-paragraph": {
+      "type": "js.paragraph",
+      "props": {
+        "text": "<p>Straight answers about how our specialists work alongside your AI agents, from the first brief to the work you ship.</p>"
+      }
+    },
+    "home-faq-1": {
+      "type": "js.faq-item",
+      "props": {
+        "question": "How does Humanify work with the AI agents we already run?",
+        "answer": "<p>Your agents keep generating. Our specialists step in where judgment matters: setting the brief, choosing between options, editing for tone and accuracy, and shaping the result into something your audience trusts. You keep your tools, your pipelines, and your pace.</p>"
+      }
+    },
+    "home-faq-2": {
+      "type": "js.faq-item",
+      "props": {
+        "question": "Which kinds of work do you take on?",
+        "answer": "<p>Creative direction, product storytelling, brand and voice systems, campaign concepts, insight synthesis, and executive communication. If your agents can draft it, we can make it genuinely excellent.</p>"
+      }
+    },
+    "home-faq-3": {
+      "type": "js.faq-item",
+      "props": {
+        "question": "How do we choose between Starter, Growth, and Enterprise?",
+        "answer": "<p>Starter suits pilots and focused projects with a single team. Growth fits teams scaling AI-assisted delivery across several workstreams. Enterprise is for complex organizations and mission-critical work that needs more of us involved. Start where you are, and move up when the volume calls for it.</p>"
+      }
+    },
+    "home-faq-4": {
+      "type": "js.faq-item",
+      "props": {
+        "question": "What does a typical engagement look like?",
+        "answer": "<p>We start with the work in front of you: one workflow, one team, and a clear definition of done. Our editors and strategists review drafts as they land, return decisions your agents can act on, and keep a running record of what changed and why. From there, scope grows with results.</p>"
+      }
+    },
+    "home-faq-5": {
+      "type": "js.faq-item",
+      "props": {
+        "question": "Do you replace our team or our agents?",
+        "answer": "<p>Neither. We add the human layer: the taste, context, and accountability that turn capable output into standout work. Your people stay in charge, and your agents stay busy.</p>"
+      }
+    },
     "c3ba66be-2b6b-4030-96d0-3a99b77471fe": {
       "type": "js.footer",
       "props": {
-        "backgroundColor": "navy",
+        "backgroundColor": "ink",
         "copyrightNotice": "&copy; 2025-2026 Humanify Example Ventures Inc.",
         "linkedInUrl": "https://www.linkedin.com",
         "xUrl": "https://x.com",

@@ -6,8 +6,9 @@ import type { VariantProps } from 'class-variance-authority';
 const paragraphVariants = cva('max-w-5xl text-balance', {
   variants: {
     variant: {
-      body: 'text-base leading-7 text-muted',
-      eyebrow: 'text-base leading-6 font-semibold text-green',
+      body: 'text-base leading-7 text-muted md:text-lg md:leading-8',
+      eyebrow:
+        'font-mono text-xs leading-6 font-bold tracking-[0.2em] text-blue uppercase before:mr-3 before:inline-block before:size-2.5 before:bg-blue before:align-[-1px] dark:text-acid dark:before:bg-acid',
     },
   },
   defaultVariants: {

@@ -8,18 +8,18 @@ props:
     backgroundColor:
       type: string
       enum:
-        - cream
+        - chalk
         - paper
-        - mist
-        - navy
+        - acid
+        - ink
       meta:enum:
-        cream: Cream
+        chalk: Chalk
         paper: Paper
-        mist: Mist
-        navy: Navy
+        acid: Acid
+        ink: Ink
       title: Background color
       examples:
-        - cream
+        - chalk
 slots:
   branding:
     title: Branding

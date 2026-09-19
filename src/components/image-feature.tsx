@@ -24,41 +24,49 @@ function ImageFeature({
   return (
     <div
       className={cn(
-        'grid gap-8 py-8 md:grid-cols-[0.95fr_1.05fr] md:items-center md:gap-12 lg:gap-16',
+        // Tabloid layout: the photo bleeds to the left viewport edge and takes
+        // the larger column; the copy column keeps the section gutter.
+        'ml-[calc(50%-50vw)] grid w-[calc(50%+50vw)] gap-8 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:items-center md:gap-12 lg:gap-16',
         className,
       )}
       {...props}
     >
-      <div className="relative min-h-72 overflow-hidden rounded-lg bg-surface-0 md:min-h-96">
-        <img
-          alt={image.alt}
-          src={image.src}
-          width={image.width}
-          height={image.height}
-          sizes="(min-width: 768px) 42vw, 100vw"
-          className="absolute inset-0 h-full w-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-navy/10" aria-hidden="true" />
+      <div className="relative mr-3 mb-3 min-h-72 md:min-h-[28rem] lg:min-h-[32rem]">
+        {/* Grainy blue print pass under the photo; the photo itself stays untextured. */}
         <div
-          className="absolute right-5 bottom-5 flex h-14 w-24 items-center justify-center rounded-lg bg-paper/90 shadow-sm backdrop-blur"
+          className="grain-multiply absolute inset-0 translate-x-3 translate-y-3 bg-blue"
           aria-hidden="true"
-        >
-          <LogoMark className="h-10" primaryClassName="fill-navy" />
+        />
+        <div className="absolute inset-0 overflow-hidden border-2 border-l-0 border-ink bg-surface-0">
+          <img
+            alt={image.alt}
+            src={image.src}
+            width={image.width}
+            height={image.height}
+            sizes="(min-width: 768px) 52vw, 100vw"
+            className="absolute inset-0 h-full w-full object-cover object-center"
+          />
+          <div
+            className="absolute right-0 bottom-0 flex h-14 w-24 items-center justify-center border-t-2 border-l-2 border-ink bg-paper"
+            aria-hidden="true"
+          >
+            <LogoMark className="h-10" primaryClassName="fill-ink" />
+          </div>
         </div>
       </div>
 
-      <div className="max-w-2xl py-2">
+      <div className="max-w-2xl px-5 py-2 sm:px-8 md:px-0 md:pr-5 lg:pr-16">
         {eyebrow && (
-          <p className="mb-4 text-base leading-6 font-semibold text-green dark:text-green">
+          <p className="mb-5 border-t-[3px] border-line pt-3 font-mono text-xs leading-6 font-bold tracking-[0.2em] text-blue uppercase before:mr-3 before:inline-block before:size-2.5 before:bg-blue before:align-[-1px] dark:text-acid dark:before:bg-acid">
             {eyebrow}
           </p>
         )}
-        <h2 className="max-w-2xl font-serif text-4xl font-normal text-balance text-text md:text-5xl">
+        <h2 className="max-w-2xl font-sans text-4xl leading-[0.95] font-black tracking-[-0.035em] text-balance text-text md:text-5xl lg:text-6xl">
           {title}
         </h2>
         <FormattedText
           as="div"
-          className="mt-5 max-w-2xl text-base leading-7 text-balance text-muted md:text-lg"
+          className="mt-6 max-w-2xl text-base leading-7 text-balance text-muted md:text-lg md:leading-8"
         >
           {description}
         </FormattedText>

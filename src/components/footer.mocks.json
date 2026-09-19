@@ -21,18 +21,18 @@
       }
     },
     {
-      "name": "Mist background",
+      "name": "Acid background",
       "props": {
-        "backgroundColor": "mist",
+        "backgroundColor": "acid",
         "emailUrl": "mailto:hello@example.com",
         "linkedInUrl": "https://www.linkedin.com",
         "xUrl": "https://x.com"
       },
       "slots": {
-        "branding": ["footer-logo-mist"]
+        "branding": ["footer-logo-acid"]
       },
       "elements": {
-        "footer-logo-mist": {
+        "footer-logo-acid": {
           "type": "logo",
           "props": {
             "linkToFrontPage": false
@@ -41,18 +41,18 @@
       }
     },
     {
-      "name": "Navy background",
+      "name": "Ink background",
       "props": {
-        "backgroundColor": "navy",
+        "backgroundColor": "ink",
         "emailUrl": "mailto:hello@example.com",
         "linkedInUrl": "https://www.linkedin.com",
         "xUrl": "https://x.com"
       },
       "slots": {
-        "branding": ["footer-logo-navy"]
+        "branding": ["footer-logo-ink"]
       },
       "elements": {
-        "footer-logo-navy": {
+        "footer-logo-ink": {
           "type": "logo",
           "props": {
             "linkToFrontPage": false

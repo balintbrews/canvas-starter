@@ -7,15 +7,15 @@
       }
     },
     {
-      "name": "Mist background",
+      "name": "Acid background",
       "props": {
-        "backgroundColor": "mist"
+        "backgroundColor": "acid"
       }
     },
     {
-      "name": "Navy background",
+      "name": "Ink background",
       "props": {
-        "backgroundColor": "navy"
+        "backgroundColor": "ink"
       }
     }
   ]

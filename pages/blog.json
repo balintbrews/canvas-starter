@@ -5,7 +5,7 @@
     "blog-header": {
       "type": "js.header",
       "props": {
-        "backgroundColor": "cream"
+        "backgroundColor": "chalk"
       },
       "slots": {
         "branding": ["blog-header-logo"],
@@ -55,7 +55,7 @@
     "blog-footer": {
       "type": "js.footer",
       "props": {
-        "backgroundColor": "navy",
+        "backgroundColor": "ink",
         "copyrightNotice": "&copy; 2025-2026 Humanify Example Ventures Inc.",
         "linkedInUrl": "https://www.linkedin.com",
         "xUrl": "https://x.com",

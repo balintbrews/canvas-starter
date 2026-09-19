@@ -1,0 +1,11 @@
+name: Testimonial
+machineName: testimonial
+status: true
+required: []
+props:
+  properties: {}
+slots:
+  intro:
+    title: Intro
+  items:
+    title: Items

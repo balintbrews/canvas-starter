@@ -7,7 +7,7 @@
         "grid-six-card-grid": {
           "type": "section",
           "props": {
-            "backgroundColor": "cream"
+            "backgroundColor": "chalk"
           },
           "slots": {
             "content": ["grid-default"]

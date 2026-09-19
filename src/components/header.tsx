@@ -4,17 +4,17 @@ import { cn } from 'drupal-canvas';
 import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 import type { VariantProps } from 'class-variance-authority';
 
-const headerVariants = cva('', {
+const headerVariants = cva('border-b-2 border-line', {
   variants: {
     backgroundColor: {
-      cream: 'bg-cream',
+      chalk: 'bg-chalk',
       paper: 'bg-paper',
-      mist: 'bg-mist',
-      navy: 'dark bg-navy',
+      acid: 'bg-acid',
+      ink: 'dark bg-ink',
     },
   },
   defaultVariants: {
-    backgroundColor: 'cream',
+    backgroundColor: 'chalk',
   },
 });
 

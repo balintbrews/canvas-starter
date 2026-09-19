@@ -8,16 +8,18 @@ props:
     backgroundColor:
       type: string
       enum:
-        - cream
+        - chalk
         - paper
-        - mist
+        - acid
+        - blue
       meta:enum:
-        cream: Cream
+        chalk: Chalk
         paper: Paper
-        mist: Mist
+        acid: Acid
+        blue: Blue
       title: Background color
       examples:
-        - cream
+        - chalk
 slots:
   content:
     title: Content

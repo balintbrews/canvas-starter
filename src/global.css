@@ -6,8 +6,7 @@
  * (If you do that, you can import the same font, e.g., from a Fontsource package
  * in `.storybook/preview.js`.)
  */
-@import url('https://rsms.me/inter/inter.css');
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
 /*
  * Importing Tailwind CSS after the font import, so PostCSS is happy with the
@@ -22,29 +21,53 @@
  */
 @plugin '@tailwindcss/typography';
 
+/*
+ * Signal palette: near-white and ink surfaces with acid green and electric
+ * blue as the only two accents. Every accent pairing below is checked against
+ * WCAG AA (ink on acid, chalk on ink, chalk on blue, and blue on chalk/paper).
+ */
 :root {
-  --cream: hsl(48deg, 55%, 97%);
-  --paper: hsl(45deg, 70%, 99%);
-  --mist: hsl(80deg, 35%, 94%);
-  --navy: hsl(211deg, 90%, 11%);
+  --chalk: #f4f4f2;
+  --paper: #ffffff;
+  --acid: #c8ff3d;
+  --ink: #0e0e10;
 
-  --sage: hsl(96deg, 25%, 82%);
-  --green: hsl(119deg, 21%, 46%);
-  --deep-green: hsl(161deg, 42%, 25%);
-  --eucalyptus: hsl(111deg, 18%, 60%);
+  --blue: #2b4bff;
+  --blue-deep: #1f38d6;
 
-  --surface-0: hsl(95deg, 31%, 91%);
-  --surface-1: hsl(98deg, 28%, 77%);
-  --line: hsl(45deg, 20%, 86%);
-  --text: var(--navy);
-  --muted: hsl(218deg, 23%, 31%);
+  /*
+   * Foreground tokens for a blue surface. Chalk passes AA on blue (5.4:1) and
+   * this pale periwinkle keeps muted text above 4.5:1 while still reading as
+   * secondary next to chalk.
+   */
+  --blue-muted: #dde2ff;
+
+  --surface-0: var(--chalk);
+  --surface-1: var(--acid);
+  --line: var(--ink);
+  --text: var(--ink);
+  --muted: #3d3d42;
 }
 
 .dark {
-  --surface-0: hsl(210deg, 48%, 22%);
-  --surface-1: hsl(211deg, 39%, 32%);
-  --text: hsl(48deg, 55%, 97%);
-  --muted: hsl(80deg, 10%, 70%);
+  --surface-0: #1c1c20;
+  --surface-1: var(--acid);
+  --line: var(--chalk);
+  --text: var(--chalk);
+  --muted: #c9c9cf;
+}
+
+/*
+ * A blue surface is an inverted surface with its own muted tone. It is used
+ * together with `dark` so hover and accent variants keep their dark-scheme
+ * values. Declared after `.dark` so its tokens win on the same element.
+ */
+.blue {
+  --surface-0: var(--blue-deep);
+  --surface-1: var(--acid);
+  --line: var(--chalk);
+  --text: var(--chalk);
+  --muted: var(--blue-muted);
 }
 
 /*
@@ -55,29 +78,125 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /*
+ * A light surface nested inside a dark or blue context (for example a paper
+ * card on a blue section) restores the light tokens for its own subtree.
+ */
+.light {
+  --surface-0: var(--chalk);
+  --surface-1: var(--acid);
+  --line: var(--ink);
+  --text: var(--ink);
+  --muted: #3d3d42;
+}
+
+/*
+ * Screen-print grain. These utilities add a noise overlay to DECORATIVE color
+ * blocks only (hero geometry, icon tiles, offset layers). They must never wrap
+ * text, so type stays crisp. `grain-screen` lightens specks on ink blocks and
+ * `grain-multiply` darkens specks on acid, blue, and paper blocks.
+ */
+@utility grain-screen {
+  position: relative;
+  isolation: isolate;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 160px 160px;
+    mix-blend-mode: screen;
+    opacity: 0.32;
+  }
+}
+
+@utility grain-multiply {
+  position: relative;
+  isolation: isolate;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 160px 160px;
+    mix-blend-mode: multiply;
+    opacity: 0.28;
+  }
+}
+
+/*
  * Tailwind CSS theme variables.
  * @see https://tailwindcss.com/docs/theme
  */
 @theme inline {
   --font-sans:
-    'InterVariable', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Archivo', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-sans--font-feature-settings:
-    'liga' 1, 'calt' 1, 'ss01' 1, 'cv05' 1, 'cv11' 1;
-  --font-serif: 'DM Serif Display', Georgia, Cambria, 'Times New Roman', serif;
+  --font-mono:
+    'Space Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    monospace;
 
-  --color-cream: var(--cream);
+  --color-chalk: var(--chalk);
   --color-paper: var(--paper);
-  --color-mist: var(--mist);
-  --color-navy: var(--navy);
-  --color-sage: var(--sage);
-  --color-green: var(--green);
-  --color-deep-green: var(--deep-green);
-  --color-eucalyptus: var(--eucalyptus);
+  --color-acid: var(--acid);
+  --color-ink: var(--ink);
+  --color-blue: var(--blue);
+  --color-blue-deep: var(--blue-deep);
+  --color-blue-muted: var(--blue-muted);
   --color-muted: var(--muted);
   --color-line: var(--line);
   --color-surface-0: var(--surface-0);
   --color-surface-1: var(--surface-1);
   --color-text: var(--text);
-  --color-inverted-text: var(--cream);
+  --color-inverted-text: var(--chalk);
+
+  /*
+   * Hard offset shadows are the only shadows in this direction. They are flat
+   * blocks, never blurred.
+   */
+  --shadow-hard: 6px 6px 0 0 var(--color-ink);
+  --shadow-hard-sm: 4px 4px 0 0 var(--color-ink);
+  --shadow-hard-lg: 10px 10px 0 0 var(--color-ink);
+  --shadow-hard-blue: 6px 6px 0 0 var(--color-blue);
+  --shadow-hard-blue-sm: 4px 4px 0 0 var(--color-blue);
+  --shadow-hard-blue-lg: 10px 10px 0 0 var(--color-blue);
+
+  /*
+   * Entrance motion for the hero geometry. Components apply it through the
+   * `motion-safe:` variant so it never runs under reduced motion.
+   */
+  --animate-signal-rise: signal-rise 0.7s cubic-bezier(0.2, 0.9, 0.3, 1) both;
+  --animate-signal-rise-late: signal-rise 0.7s cubic-bezier(0.2, 0.9, 0.3, 1)
+    0.12s both;
+
+  /*
+   * Print settle: misregistered layers slide into register. Applied only
+   * through `motion-safe:` so reduced-motion users get the final state.
+   */
+  --animate-print-settle: print-settle 0.9s cubic-bezier(0.2, 0.9, 0.3, 1) both;
+  --animate-print-settle-late: print-settle 0.9s cubic-bezier(0.2, 0.9, 0.3, 1)
+    0.15s both;
+
+  @keyframes print-settle {
+    from {
+      opacity: 0;
+      transform: translate3d(-0.75rem, 0.75rem, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes signal-rise {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 2rem, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
 }

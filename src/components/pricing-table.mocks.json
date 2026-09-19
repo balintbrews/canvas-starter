@@ -7,7 +7,7 @@
         "pricing-table-in-section": {
           "type": "section",
           "props": {
-            "backgroundColor": "cream"
+            "backgroundColor": "chalk"
           },
           "slots": {
             "content": ["pricing-table-default"]
@@ -29,6 +29,42 @@
           }
         },
         "pricing-table-default-paragraph": {
+          "type": "paragraph",
+          "props": {
+            "text": "<p>Choose the model that fits your stage, then scale across strategy, design, and communication with a team that knows how to collaborate with AI systems.</p>"
+          }
+        }
+      }
+    },
+    {
+      "name": "In a blue section",
+      "root": "pricing-table-in-blue-section",
+      "elements": {
+        "pricing-table-in-blue-section": {
+          "type": "section",
+          "props": {
+            "backgroundColor": "blue"
+          },
+          "slots": {
+            "content": ["pricing-table-blue"]
+          }
+        },
+        "pricing-table-blue": {
+          "type": "pricing-table",
+          "slots": {
+            "intro": [
+              "pricing-table-blue-heading",
+              "pricing-table-blue-paragraph"
+            ]
+          }
+        },
+        "pricing-table-blue-heading": {
+          "type": "heading",
+          "props": {
+            "text": "Our pricing is built for measurable outcomes."
+          }
+        },
+        "pricing-table-blue-paragraph": {
           "type": "paragraph",
           "props": {
             "text": "<p>Choose the model that fits your stage, then scale across strategy, design, and communication with a team that knows how to collaborate with AI systems.</p>"

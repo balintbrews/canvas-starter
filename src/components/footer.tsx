@@ -7,14 +7,14 @@ import type { VariantProps } from 'class-variance-authority';
 const footerVariants = cva('', {
   variants: {
     backgroundColor: {
-      cream: 'bg-cream',
+      chalk: 'bg-chalk',
       paper: 'bg-paper',
-      mist: 'bg-mist',
-      navy: 'dark bg-navy',
+      acid: 'bg-acid',
+      ink: 'dark bg-ink',
     },
   },
   defaultVariants: {
-    backgroundColor: 'cream',
+    backgroundColor: 'chalk',
   },
 });
 
@@ -42,14 +42,14 @@ function MailIcon() {
   return (
     <svg
       viewBox="0 0 24 24"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      strokeLinecap="square"
+      strokeLinejoin="miter"
       strokeWidth={2}
       className="h-5 fill-none stroke-current"
       aria-hidden="true"
     >
       <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
-      <rect width={20} height={16} x={2} y={4} rx={2} />
+      <rect width={20} height={16} x={2} y={4} />
     </svg>
   );
 }
@@ -64,7 +64,7 @@ function SocialLink({ children, label, url }: SocialLinkProps) {
   return (
     <a
       href={url}
-      className="inline-flex size-10 items-center justify-center rounded-full border border-text/30 text-text transition hover:border-green hover:text-green focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green"
+      className="inline-flex size-11 items-center justify-center border-2 border-line text-text hover:border-acid hover:bg-acid hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue motion-safe:transition-colors dark:focus-visible:outline-acid"
       aria-label={label}
     >
       {children}
@@ -99,8 +99,8 @@ function Footer({
       className={cn(footerVariants({ backgroundColor }), className)}
       {...props}
     >
-      <div className="mx-auto grid max-w-7xl gap-8 px-5 py-8 sm:px-8 md:grid-cols-[1fr_auto] md:items-center lg:px-16">
-        <div className="flex flex-col gap-3">
+      <div className="mx-auto grid max-w-7xl gap-8 px-5 py-10 sm:px-8 md:grid-cols-[1fr_auto] md:items-center md:py-12 lg:px-16">
+        <div className="flex flex-col gap-4">
           <div
             className={cn(
               'h-10 shrink-0 items-center justify-start',
@@ -111,14 +111,14 @@ function Footer({
           </div>
           <FormattedText
             as="div"
-            className="text-xs leading-5 text-muted md:text-sm"
+            className="font-mono text-xs leading-5 tracking-[0.04em] text-muted uppercase"
           >
             {copyrightNotice}
           </FormattedText>
         </div>
 
         {(linkedInUrl || xUrl || emailUrl) && (
-          <div className="flex gap-4 md:justify-end">
+          <div className="flex gap-3 md:justify-end">
             {linkedInUrl && (
               <SocialLink label="LinkedIn" url={linkedInUrl}>
                 <LinkedInLogoIcon />

@@ -25,7 +25,6 @@ function LogoMark({ className, primaryClassName }: LogoMarkProps) {
         y="4"
         width="8"
         height="32"
-        rx="4"
       />
       <rect
         className={cn('fill-text', primaryClassName)}
@@ -33,10 +32,9 @@ function LogoMark({ className, primaryClassName }: LogoMarkProps) {
         y="4"
         width="8"
         height="32"
-        rx="4"
       />
-      <rect className="fill-green" x="13" y="4" width="8" height="14" rx="4" />
-      <rect className="fill-green" x="13" y="22" width="8" height="14" rx="4" />
+      <rect className="fill-blue" x="13" y="4" width="8" height="14" />
+      <rect className="fill-blue" x="13" y="22" width="8" height="14" />
     </svg>
   );
 }
@@ -46,7 +44,7 @@ function LogoContent({ linkToFrontPage }: { linkToFrontPage: boolean }) {
     <>
       {linkToFrontPage && <span className="sr-only">Home</span>}
       <LogoMark />
-      <span className="shrink-0 text-2xl leading-none font-bold text-text md:text-3xl">
+      <span className="shrink-0 text-2xl leading-none font-black tracking-[-0.04em] text-text uppercase md:text-3xl">
         Humanify
       </span>
     </>
@@ -54,7 +52,10 @@ function LogoContent({ linkToFrontPage }: { linkToFrontPage: boolean }) {
 }
 
 function Logo({ className, linkToFrontPage = true }: LogoProps) {
-  const classes = cn('inline-flex h-10 items-center gap-3 md:h-12', className);
+  const classes = cn(
+    'inline-flex h-10 items-center gap-3 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue md:h-12',
+    className,
+  );
   const content: ReactNode = <LogoContent linkToFrontPage={linkToFrontPage} />;
 
   if (linkToFrontPage) {
