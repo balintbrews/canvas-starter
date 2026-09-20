@@ -1,0 +1,16 @@
+name: Split
+machineName: split
+status: true
+required: []
+props:
+  properties:
+    mediaBleed:
+      type: boolean
+      title: Media bleed
+      examples:
+        - false
+slots:
+  content:
+    title: Content
+  media:
+    title: Media

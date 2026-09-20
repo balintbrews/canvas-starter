@@ -1,0 +1,149 @@
+{
+  "mocks": [
+    {
+      "name": "Article hero",
+      "root": "split-hero-section",
+      "elements": {
+        "split-hero-section": {
+          "type": "section",
+          "props": {
+            "backgroundColor": "paper"
+          },
+          "slots": {
+            "content": ["split-hero"]
+          }
+        },
+        "split-hero": {
+          "type": "split",
+          "slots": {
+            "content": ["split-hero-eyebrow", "split-hero-title"],
+            "media": ["split-hero-image"]
+          },
+          "props": {
+            "mediaBleed": true
+          }
+        },
+        "split-hero-eyebrow": {
+          "type": "paragraph",
+          "props": {
+            "text": "Article",
+            "variant": "eyebrow"
+          }
+        },
+        "split-hero-title": {
+          "type": "heading",
+          "props": {
+            "text": "How to turn model output into product stories people remember",
+            "level": "h1"
+          }
+        },
+        "split-hero-image": {
+          "type": "image",
+          "props": {
+            "variant": "print",
+            "layoutWidth": "half_bleed",
+            "image": {
+              "src": "https://images.unsplash.com/photo-1484959014842-cd1d967a39cf?auto=format&fit=crop&q=80&w=1770&alternateWidths=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1484959014842-cd1d967a39cf%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80%26w%3D%7Bwidth%7D",
+              "alt": "Woman playing the violin",
+              "width": 1770,
+              "height": 1180
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Without media",
+      "root": "split-no-media-section",
+      "elements": {
+        "split-no-media-section": {
+          "type": "section",
+          "props": {
+            "backgroundColor": "paper"
+          },
+          "slots": {
+            "content": ["split-no-media"]
+          }
+        },
+        "split-no-media": {
+          "type": "split",
+          "slots": {
+            "content": ["split-no-media-eyebrow", "split-no-media-title"],
+            "media": ["split-no-media-image"]
+          },
+          "props": {
+            "mediaBleed": true
+          }
+        },
+        "split-no-media-eyebrow": {
+          "type": "paragraph",
+          "props": {
+            "text": "Article",
+            "variant": "eyebrow"
+          }
+        },
+        "split-no-media-title": {
+          "type": "heading",
+          "props": {
+            "text": "How to turn scattered research into decisions teams can act on",
+            "level": "h1"
+          }
+        },
+        "split-no-media-image": {
+          "type": "image",
+          "props": {
+            "variant": "print",
+            "layoutWidth": "half_bleed"
+          }
+        }
+      }
+    },
+    {
+      "name": "Plain image on chalk",
+      "root": "split-plain-section",
+      "elements": {
+        "split-plain-section": {
+          "type": "section",
+          "props": {
+            "backgroundColor": "chalk"
+          },
+          "slots": {
+            "content": ["split-plain"]
+          }
+        },
+        "split-plain": {
+          "type": "split",
+          "slots": {
+            "content": ["split-plain-title", "split-plain-paragraph"],
+            "media": ["split-plain-image"]
+          }
+        },
+        "split-plain-title": {
+          "type": "heading",
+          "props": {
+            "text": "We bring human strengths to AI-first teams."
+          }
+        },
+        "split-plain-paragraph": {
+          "type": "paragraph",
+          "props": {
+            "text": "We partner with AI-native teams to add what machines still struggle to replicate: taste, narrative coherence, emotional resonance, and domain-informed judgment."
+          }
+        },
+        "split-plain-image": {
+          "type": "image",
+          "props": {
+            "variant": "plain",
+            "layoutWidth": "half",
+            "image": {
+              "src": "https://images.unsplash.com/photo-1484959014842-cd1d967a39cf?auto=format&fit=crop&q=80&w=1770&alternateWidths=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1484959014842-cd1d967a39cf%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80%26w%3D%7Bwidth%7D",
+              "alt": "Woman playing the violin",
+              "width": 1770,
+              "height": 1180
+            }
+          }
+        }
+      }
+    }
+  ]
+}

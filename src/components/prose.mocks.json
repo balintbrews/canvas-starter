@@ -1,0 +1,26 @@
+{
+  "mocks": [
+    {
+      "name": "Centered block in a section",
+      "root": "prose-centered-section",
+      "elements": {
+        "prose-centered-section": {
+          "type": "section",
+          "props": {
+            "backgroundColor": "chalk"
+          },
+          "slots": {
+            "content": ["prose-centered"]
+          }
+        },
+        "prose-centered": {
+          "type": "prose",
+          "props": {
+            "blockAlignment": "center",
+            "text": "<p>Product teams can generate launch copy in seconds, but the real work is choosing a story people can repeat.</p><h2>Build around outcomes</h2><p>Start with the customer tension, then show the product change in concrete terms. Link teams to supporting details such as <a href=\"/release-notes\">release notes</a>.</p><ul><li>Name the user problem in plain language.</li><li>Explain the measurable result.</li></ul>"
+          }
+        }
+      }
+    }
+  ]
+}

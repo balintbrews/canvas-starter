@@ -20,6 +20,35 @@
           }
         }
       }
+    },
+    {
+      "name": "Page title (h1)",
+      "root": "heading-title-section",
+      "elements": {
+        "heading-title-section": {
+          "type": "section",
+          "props": {
+            "backgroundColor": "paper"
+          },
+          "slots": {
+            "content": ["heading-title-eyebrow", "heading-title"]
+          }
+        },
+        "heading-title-eyebrow": {
+          "type": "paragraph",
+          "props": {
+            "text": "Article",
+            "variant": "eyebrow"
+          }
+        },
+        "heading-title": {
+          "type": "heading",
+          "props": {
+            "text": "How to turn model output into product stories people remember",
+            "level": "h1"
+          }
+        }
+      }
     }
   ]
 }

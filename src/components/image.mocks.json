@@ -1,0 +1,118 @@
+{
+  "mocks": [
+    {
+      "name": "Print in a section",
+      "root": "image-print-section",
+      "elements": {
+        "image-print-section": {
+          "type": "section",
+          "props": {
+            "backgroundColor": "chalk"
+          },
+          "slots": {
+            "content": ["image-print"]
+          }
+        },
+        "image-print": {
+          "type": "image",
+          "props": {
+            "variant": "print",
+            "image": {
+              "src": "https://images.unsplash.com/photo-1484959014842-cd1d967a39cf?auto=format&fit=crop&q=80&w=1770&alternateWidths=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1484959014842-cd1d967a39cf%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80%26w%3D%7Bwidth%7D",
+              "alt": "Woman playing the violin",
+              "width": 1770,
+              "height": 1180
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Plain in a section",
+      "root": "image-plain-section",
+      "elements": {
+        "image-plain-section": {
+          "type": "section",
+          "props": {
+            "backgroundColor": "paper"
+          },
+          "slots": {
+            "content": ["image-plain"]
+          }
+        },
+        "image-plain": {
+          "type": "image",
+          "props": {
+            "variant": "plain",
+            "image": {
+              "src": "https://images.unsplash.com/photo-1484959014842-cd1d967a39cf?auto=format&fit=crop&q=80&w=1770&alternateWidths=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1484959014842-cd1d967a39cf%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80%26w%3D%7Bwidth%7D",
+              "alt": "Woman playing the violin",
+              "width": 1770,
+              "height": 1180
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Article body",
+      "root": "image-article-section",
+      "elements": {
+        "image-article-section": {
+          "type": "section",
+          "props": {
+            "backgroundColor": "chalk"
+          },
+          "slots": {
+            "content": ["image-article-image", "image-article-prose"]
+          }
+        },
+        "image-article-image": {
+          "type": "image",
+          "props": {
+            "variant": "print",
+            "image": {
+              "src": "https://images.unsplash.com/photo-1484959014842-cd1d967a39cf?auto=format&fit=crop&q=80&w=1770&alternateWidths=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1484959014842-cd1d967a39cf%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80%26w%3D%7Bwidth%7D",
+              "alt": "Woman playing the violin",
+              "width": 1770,
+              "height": 1180
+            }
+          }
+        },
+        "image-article-prose": {
+          "type": "prose",
+          "props": {
+            "text": "<p>Product teams can generate launch copy in seconds, but the real work is choosing a story people can repeat.</p><h2>Build around outcomes</h2><p>Start with the customer tension, then show the product change in concrete terms.</p>"
+          }
+        }
+      }
+    },
+    {
+      "name": "Without image",
+      "root": "image-missing-section",
+      "elements": {
+        "image-missing-section": {
+          "type": "section",
+          "props": {
+            "backgroundColor": "chalk"
+          },
+          "slots": {
+            "content": ["image-missing", "image-missing-prose"]
+          }
+        },
+        "image-missing": {
+          "type": "image",
+          "props": {
+            "variant": "print"
+          }
+        },
+        "image-missing-prose": {
+          "type": "prose",
+          "props": {
+            "text": "<p>Without an image the component renders nothing, so this paragraph sits at the top of the section with no leftover gap.</p>"
+          }
+        }
+      }
+    }
+  ]
+}

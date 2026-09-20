@@ -20,4 +20,15 @@ props:
           Stories explain why anyone should care.”</p></blockquote><p>Apply
           <strong>editorial discipline</strong> so the final message feels
           <em>clear and credible</em>.</p>
+    blockAlignment:
+      type: string
+      enum:
+        - start
+        - center
+      meta:enum:
+        start: Start
+        center: Center
+      title: Block alignment
+      examples:
+        - start
 slots: {}

@@ -1,0 +1,40 @@
+name: Image
+machineName: image
+status: true
+required: []
+props:
+  properties:
+    variant:
+      type: string
+      enum:
+        - print
+        - plain
+      meta:enum:
+        print: Print
+        plain: Plain
+      title: Variant
+      examples:
+        - print
+    layoutWidth:
+      type: string
+      enum:
+        - full
+        - half
+        - half_bleed
+      meta:enum:
+        full: Full width
+        half: Half width
+        half_bleed: Half width with right bleed
+      title: Layout width
+      examples:
+        - full
+    image:
+      type: object
+      $ref: json-schema-definitions://canvas.module/image
+      title: Image
+      examples:
+        - src: https://images.unsplash.com/photo-1484959014842-cd1d967a39cf?auto=format&fit=crop&q=80&w=1770&alternateWidths=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1484959014842-cd1d967a39cf%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80%26w%3D%7Bwidth%7D
+          alt: Woman playing the violin
+          width: 1770
+          height: 1180
+slots: {}

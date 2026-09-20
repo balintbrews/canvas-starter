@@ -1,0 +1,74 @@
+{
+  "label": "Article — Full content",
+  "entityType": "node",
+  "bundle": "article",
+  "viewMode": "full",
+  "elements": {
+    "article-hero-section": {
+      "type": "js.section",
+      "props": {
+        "backgroundColor": "paper"
+      },
+      "slots": {
+        "content": ["article-hero"]
+      }
+    },
+    "article-hero": {
+      "type": "js.split",
+      "slots": {
+        "content": ["article-eyebrow", "article-title"],
+        "media": ["article-image"]
+      },
+      "props": {
+        "mediaBleed": true
+      }
+    },
+    "article-eyebrow": {
+      "type": "js.paragraph",
+      "props": {
+        "text": "Article",
+        "variant": "eyebrow"
+      }
+    },
+    "article-title": {
+      "type": "js.heading",
+      "props": {
+        "text": {
+          "sourceType": "entity-field",
+          "expression": "ℹ︎␜entity:node:article␝title␞␟value"
+        },
+        "level": "h1"
+      }
+    },
+    "article-image": {
+      "type": "js.image",
+      "props": {
+        "variant": "print",
+        "layoutWidth": "half_bleed",
+        "image": {
+          "sourceType": "entity-field",
+          "expression": "ℹ︎␜entity:node:article␝field_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}"
+        }
+      }
+    },
+    "article-body-section": {
+      "type": "js.section",
+      "props": {
+        "backgroundColor": "chalk"
+      },
+      "slots": {
+        "content": ["article-body"]
+      }
+    },
+    "article-body": {
+      "type": "js.prose",
+      "props": {
+        "text": {
+          "sourceType": "entity-field",
+          "expression": "ℹ︎␜entity:node:article␝body␞␟processed"
+        },
+        "blockAlignment": "center"
+      }
+    }
+  }
+}

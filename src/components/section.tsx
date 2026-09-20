@@ -3,21 +3,30 @@ import { cn } from 'drupal-canvas';
 import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 import type { VariantProps } from 'class-variance-authority';
 
-const sectionVariants = cva('border-b-2 border-line', {
-  variants: {
-    backgroundColor: {
-      chalk: 'bg-chalk',
-      paper: 'bg-paper',
-      acid: 'bg-acid',
-      // Blue is an inverted surface: chalk type, periwinkle muted text, and a
-      // deeper blue for surface fills.
-      blue: 'dark blue bg-blue',
+// A section stays overflow-visible unless a descendant opts into a
+// right-side viewport bleed by carrying the `bleed-x` marker class (see the
+// Split component). Only then is horizontal overflow clipped, so the bleed
+// never adds page-level horizontal scroll when a classic scrollbar makes
+// 100vw wider than the layout viewport. Sections without the marker keep
+// their existing behavior, including left bleeds that rely on overflow.
+const sectionVariants = cva(
+  'border-b-2 border-line has-[.bleed-x]:overflow-x-clip',
+  {
+    variants: {
+      backgroundColor: {
+        chalk: 'bg-chalk',
+        paper: 'bg-paper',
+        acid: 'bg-acid',
+        // Blue is an inverted surface: chalk type, periwinkle muted text, and a
+        // deeper blue for surface fills.
+        blue: 'dark blue bg-blue',
+      },
+    },
+    defaultVariants: {
+      backgroundColor: 'chalk',
     },
   },
-  defaultVariants: {
-    backgroundColor: 'chalk',
-  },
-});
+);
 
 type SectionBackgroundColor = NonNullable<
   VariantProps<typeof sectionVariants>['backgroundColor']
