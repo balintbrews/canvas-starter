@@ -17,7 +17,7 @@
   "dependencies": {
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "drupal-canvas": "^0.5.1",
+    "drupal-canvas": "^0.5.2",
     "drupal-jsonapi-params": "^3.0.1",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
@@ -25,9 +25,9 @@
     "tailwind-merge": "^3.7.0"
   },
   "devDependencies": {
-    "@drupal-canvas/cli": "^0.24.0",
+    "@drupal-canvas/cli": "^0.24.1",
     "@drupal-canvas/eslint-config": "^0.10.0",
-    "@drupal-canvas/workbench": "^0.11.0",
+    "@drupal-canvas/workbench": "^0.11.1",
     "@eslint/js": "^9.39.5",
     "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
     "@tailwindcss/typography": "^0.5.20",
